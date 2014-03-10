@@ -1,3 +1,19 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.featured-photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selected-photo {
+  border: dashed 3px blue;
+  float: left;
+}
+
+.photo {
+  margin: 3px;
+  float: left;
+}

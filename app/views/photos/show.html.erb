@@ -1,11 +1,1 @@
-<div>
-  <%= image_tag @featured_photo.standard_url, class:'featured-photo' %>
-</div>
-
-<div>
-  <% @photos.reverse.each do |photo| %>
-    <%= link_to photo_path(photo.id) do %>
-      <%= image_tag photo.thumbnail_url, class:'photo' %>
-    <% end %>
-  <% end %>
-</div>
+<%= render partial: 'photos/photos' %>
