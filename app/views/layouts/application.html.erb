@@ -21,7 +21,14 @@
 </head>
 
 <body>
+
   <div class="container">
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'bonobos-logo.jpg', size: '150x50' %>
+      <% end %>
+    </div>
+    
     <%= yield %>
   </div>
 </body>
