@@ -5,4 +5,9 @@ describe 'home page' do
     visit root_path
     expect(page).to have_css('.photo')
   end
+
+  it 'has featured-photo' do
+    visit root_path
+    expect(page).to have_css('.featured-photo')
+  end
 end

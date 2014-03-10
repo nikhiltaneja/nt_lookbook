@@ -1,4 +1,8 @@
 <div>
+  <%= image_tag @photo.standard_url, class:'featured-photo' %>
+</div>
+
+<div>
   <% @photos.reverse.each do |photo| %>
     <%= image_tag photo.thumbnail_url, class:'photo' %>
   <% end %>
