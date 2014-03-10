@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   def index
-    InstagramFetcher.new.find_photos
+    InstagramFetcher.new.recent_photos
     @photos = Photo.all
   end
 end
