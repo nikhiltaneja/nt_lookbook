@@ -1,4 +1,8 @@
+require 'resque/server'
+
 NtLookbook::Application.routes.draw do
-  resources :photos, only: [:index, :show]
-  root :to => "photos#index"
+  mount Resque::Server, :at => "/resque"
+
+  resources :photos, only: [:show]
+  root :to => "photos#show"
 end

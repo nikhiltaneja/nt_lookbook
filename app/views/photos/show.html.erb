@@ -1,1 +1,18 @@
-<%= render partial: 'photos/photos' %>
+<div>
+  <%= image_tag @featured_photo.standard_url, class:'featured-photo' %>
+</div>
+
+<div>
+  <% @photos.reverse.each do |photo| %>
+    <% if @featured_photo.id == photo.id %>
+        <%= link_to photo_path(photo.id) do %>
+          <%= image_tag photo.thumbnail_url, class:'selected-photo img-rounded' %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= link_to photo_path(photo.id) do %>
+        <%= image_tag photo.thumbnail_url, class:'photo img-thumbnail' %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

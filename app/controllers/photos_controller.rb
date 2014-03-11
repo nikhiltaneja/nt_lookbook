@@ -1,12 +1,12 @@
 class PhotosController < ApplicationController
-  def index
-    InstagramFetcher.new.recent_photos
-    @photos = Photo.all
-    @featured_photo = Photo.last
-  end
 
   def show
+    Resque.enqueue(Fetcher)
     @photos = Photo.all
-    @featured_photo = Photo.find(params[:id])
+    if params[:id]
+      @featured_photo = Photo.find(params[:id])
+    else 
+      @featured_photo = Photo.last
+    end 
   end
 end
