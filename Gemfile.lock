@@ -214,6 +214,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.0.2)
   rails_12factor
+  redis
   resque
   rspec-rails
   sass-rails (~> 4.0.0)
