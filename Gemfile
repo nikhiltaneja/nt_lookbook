@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capybara-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 group :production do

@@ -1,4 +1,7 @@
 class InstagramFetcher
+  
+  BONOBOS_ID = "8194723"
+
   attr_reader :client
 
   def initialize
@@ -6,13 +9,8 @@ class InstagramFetcher
   end
 
   def recent_photos
-    photos = client.user_recent_media(bonobos_id)
+    photos = client.user_recent_media(BONOBOS_ID)
     find_photos(photos)
-  end
-
-  def bonobos_id
-    user = client.user_search('bonobos')
-    user.first.id
   end
 
   def find_photos(photos)
