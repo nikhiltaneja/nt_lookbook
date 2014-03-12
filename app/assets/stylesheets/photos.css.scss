@@ -2,25 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.featured-photo {
+.featured-photo img {
   display: block;
   margin: 0 auto;
+  max-width: 350px;
+  max-height: 350px;
 }
 
 .selected-photo {
-  border: dashed 3px blue;
+  border: dotted 3px blue;
   float: left;
 }
 
 .photo {
   margin: 5px;
   float: left;
+  max-width: 120px;
+  max-height: 120px;
 }
 
 .arrow-left {
-  position: relative;
+  margin: 175px auto;
 }
 
-.top-line {
-  position: relative;
+.arrow-right {
+  margin: 175px auto;
 }

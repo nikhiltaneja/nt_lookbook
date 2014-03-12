@@ -1,28 +1,31 @@
-<div class="top-line">
-  <div class="row">
-    <div class="col-md-2 arrow-left">
-      <%= link_to photo_path(@featured_photo.id + 1)  do %>
+<div class="row">
+  <div class="arrow-left col-xs-1 col-xs-offset-3">
+    <% unless @featured_photo == @photos.last %>
+      <%= link_to photo_path(@featured_photo.id + 1) do %>
         <span class="glyphicon glyphicon-chevron-left"></span>
       <% end %>
-    </div>
-    <div class="col-md-6 featured-photo">
-      <%= image_tag @featured_photo.standard_url %>
-    </div>
-    <div class="col-md-2 pull-right">
+    <% end %>
+  </div>
+
+  <div class="featured-photo col-xs-4">
+    <%= image_tag @featured_photo.standard_url %>
+  </div>
+
+  <div class="arrow-right col-xs-1 col-xs-offset-1">
+    <% unless @featured_photo == @photos.first %>
       <%= link_to photo_path(@featured_photo.id - 1) do %>
-        <span class="glyphicon glyphicon-chevron-right arrow-right"></span>
+        <span class="glyphicon glyphicon-chevron-right"></span>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 
 <div>
   <% @photos.reverse.each do |photo| %>
-    <% if @featured_photo.id == photo.id %>
-        <%= link_to photo_path(photo.id) do %>
-          <%= image_tag photo.thumbnail_url, class:'selected-photo img-rounded' %>
-        <% end %>
-      </div>
+    <% if @featured_photo == photo %>
+      <%= link_to photo_path(photo.id) do %>
+        <%= image_tag photo.thumbnail_url, class:'photo selected-photo' %>
+      <% end %>
     <% else %>
       <%= link_to photo_path(photo.id) do %>
         <%= image_tag photo.thumbnail_url, class:'photo img-thumbnail' %>
