@@ -4,8 +4,7 @@
 
 .featured-photo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .selected-photo {
@@ -16,4 +15,12 @@
 .photo {
   margin: 5px;
   float: left;
+}
+
+.arrow-left {
+  position: relative;
+}
+
+.top-line {
+  position: relative;
 }

@@ -1,5 +1,19 @@
-<div>
-  <%= image_tag @featured_photo.standard_url, class:'featured-photo' %>
+<div class="top-line">
+  <div class="row">
+    <div class="col-md-2 arrow-left">
+      <%= link_to photo_path(@featured_photo.id + 1)  do %>
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      <% end %>
+    </div>
+    <div class="col-md-6 featured-photo">
+      <%= image_tag @featured_photo.standard_url %>
+    </div>
+    <div class="col-md-2 pull-right">
+      <%= link_to photo_path(@featured_photo.id - 1) do %>
+        <span class="glyphicon glyphicon-chevron-right arrow-right"></span>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div>
