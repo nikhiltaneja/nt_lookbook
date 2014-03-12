@@ -41,17 +41,21 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'capybara-rails'
-  gem 'capybara'
-  gem 'launchy'
   gem 'pry-rails'
 end
 
 group :production do
   gem 'rails_12factor'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password

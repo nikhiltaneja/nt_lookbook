@@ -7,7 +7,7 @@
     <% end %>
   </div>
 
-  <div class="col-xs-8">
+  <div class="col-xs-8" id="primary-picture">
     <%= image_tag @featured_photo.standard_url, class:'img-responsive featured-photo', id: @featured_photo.id %>
   </div>
 
@@ -24,12 +24,12 @@
   <div>
     <% @photos.reverse.each do |photo| %>
       <% if @featured_photo == photo %>
-        <%= link_to photo_path(photo.id) do %>
-          <%= image_tag photo.thumbnail_url, class:'photo selected-photo', id: photo.id %>
+        <%= link_to(photo_path(photo.id), id:photo.id) do %>
+          <%= image_tag photo.thumbnail_url, class:'photo selected-photo'%>
         <% end %>
       <% else %>
-        <%= link_to photo_path(photo.id) do %>
-          <%= image_tag photo.thumbnail_url, class:'photo img-thumbnail', id: photo.id %>
+        <%= link_to(photo_path(photo.id), id:photo.id) do %>
+          <%= image_tag photo.thumbnail_url, class:'photo img-thumbnail' %>
         <% end %>
       <% end %>
     <% end %>
