@@ -12,7 +12,15 @@ describe 'home page' do
   end
 
   it 'has links to each thumbnail' do
+    photo1 = Photo.create(
+      standard_url: "http://distilleryimage10.s3.amazonaws.com/288b6860a7c411e38b890e44eb87a70a_8.jpg",
+      thumbnail_url: "http://distilleryimage10.s3.amazonaws.com/288b6860a7c411e38b890e44eb87a70a_5.jpg"
+      )
+
     visit root_path
-    page.all('.photo')[2].click
+    save_and_open_page
+    find("#1").click
+    photo = find(".featured-photo")
+    expect(photo).to have_css("#1")
   end
 end

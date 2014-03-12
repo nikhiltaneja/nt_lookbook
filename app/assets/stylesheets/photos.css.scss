@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.featured-photo img {
+.featured-photo {
   display: block;
   margin: 0 auto;
 }
@@ -19,10 +19,17 @@
   max-height: 120px;
 }
 
-.arrow-left {
-  margin: 175px auto;
+.arrow-left, .arrow-right {
+  position: relative;
+  margin: auto;
+  top: 320px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
 }
 
-.arrow-right {
-  margin: 175px auto;
+.glyphicon {
+  font-size: 200%;
 }
