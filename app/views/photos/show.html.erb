@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-2">
-    <% unless @featured_photo == @photos.last %>
+    <% unless first_photo %>
       <%= link_to photo_path(@featured_photo.id + 1) do %>
         <span class="glyphicon glyphicon-chevron-left arrow-left pull-right"></span>
       <% end %>
@@ -12,7 +12,7 @@
   </div>
 
   <div class="col-xs-2">
-    <% unless @featured_photo == @photos.first %>
+    <% unless last_photo %>
       <%= link_to photo_path(@featured_photo.id - 1) do %>
         <span class="glyphicon glyphicon-chevron-right arrow-right pull-left"></span>
       <% end %>
