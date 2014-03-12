@@ -1,3 +1,7 @@
 == README
 
 This lookbook displays images from Bonobos's Instagram feed and provides a pleasant browsing experience, especially for tablet users.
+
+I've used RSpec for testing, Postgres as a database, and Bootstrap to help with responsive design. I also implemented a background worker via Resque/Redis to pull photos from the Instagram API.
+
+To prepare the background worker locally, start a redis server (enter redis-server in the terminal), and then start the worker (bundle exec rake environment resque:work QUEUE=instagram_queue)
